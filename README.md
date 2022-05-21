@@ -126,3 +126,17 @@ yarn add react-native-svg react-native-linear-gradient react-native-image-crop-p
 ```sh
 npx pod-install
 ```
+
+### Install native-base and its dependencies
+
+- **Install the packages with `yarn`**
+
+```sh
+yarn add native-base react-native-safe-area-context
+```
+
+- **Install the pod dependencies for IOS**
+
+```sh
+npx pod-install
+```
