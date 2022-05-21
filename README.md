@@ -92,3 +92,17 @@ module.exports = {
 ```sh
 yarn start --reset-cache
 ```
+
+### Add some commonly required react native packages
+
+- **Install the following packages with `yarn`**
+
+```sh
+yarn add react-native-svg react-native-linear-gradient react-native-image-crop-picker react-native-sms-retriever lottie-ios lottie-react-native @react-native-async-storage/async-storage @react-native-community/netinfo @react-native-community/clipboard
+```
+
+- **Install the pod dependencies for IOS**
+
+```sh
+npx pod-install
+```
