@@ -5,8 +5,11 @@ import {Text} from 'react-native';
 export default function Router() {
   return (
     <>
-      <Text>
-        <ICONS.Chat />
+      <Text
+        style={{
+          fontFamily: 'Nunito-Bold',
+        }}>
+        <ICONS.Chat /> Hello Fonts
       </Text>
     </>
   );

@@ -93,6 +93,26 @@ module.exports = {
 yarn start --reset-cache
 ```
 
+### Configure custom fonts in the project
+
+- **Create `react-native.config.js` file in the root of your project**
+
+```sh
+touch react-native.config.js
+```
+
+- **Add the following code to the file**
+
+```js
+module.exports = {
+  project: {
+    ios: {},
+    android: {},
+  },
+  assets: ['./src/assets/fonts'],
+};
+```
+
 ### Add some commonly required react native packages
 
 - **Install the following packages with `yarn`**
