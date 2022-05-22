@@ -140,3 +140,57 @@ yarn add native-base react-native-safe-area-context
 ```sh
 npx pod-install
 ```
+
+### Install `react-navigation` and its dependencies
+
+- **Install the core react-navigation packages with `yarn`**
+
+```sh
+yarn add @react-navigation/native @react-navigation/native-stack @react-navigation/bottom-tabs @react-navigation/drawer
+```
+
+- **Install `react-native-screens` with `yarn`**
+
+```sh
+yarn add react-native-screens
+```
+
+- **Add the following code to the body of `android/app/src/main/java/<package-name>/MainActivity.java`**
+
+```java
+// ...
+import android.os.Bundle;
+
+public class MainActivity extends ReactActivity {
+  // ...
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
+  }
+  // ...
+}
+```
+
+- **Install `react-native-reanimated` with `yarn`**
+
+```sh
+yarn add react-native-reanimated
+```
+
+- **Add Reanimated's babel plugin to your `babel.config.js`**
+
+```js
+module.exports = {
+  // ...
+  plugins: [
+    // ...
+    'react-native-reanimated/plugin',
+  ],
+};
+```
+
+- **Install the pod dependencies for IOS**
+
+```sh
+npx pod-install
+```

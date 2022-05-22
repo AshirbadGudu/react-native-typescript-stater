@@ -1,10 +1,17 @@
 package com.tsreactnativestater;
-
+ // Add following import for react-native-screens
+import android.os.Bundle;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 
 public class MainActivity extends ReactActivity {
+
+  // Add following code for react-native-screens package
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
+  }
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
