@@ -8,6 +8,7 @@
  * @format
  */
 
+import {NavigationContainer} from '@react-navigation/native';
 import {NativeBaseProvider} from 'native-base';
 import React from 'react';
 import CustomTheme from 'styles';
@@ -23,7 +24,9 @@ export default function App() {
             'linear-gradient': require('react-native-linear-gradient').default,
           },
         }}>
-        <Router />
+        <NavigationContainer>
+          <Router />
+        </NavigationContainer>
       </NativeBaseProvider>
     </>
   );
