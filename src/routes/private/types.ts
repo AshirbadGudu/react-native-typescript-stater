@@ -1,5 +1,4 @@
 export type PrivateRoutesTypes = {
-  Home: undefined;
-  Profile: undefined;
+  BottomTabs: undefined;
   EditProfile: undefined;
 };
