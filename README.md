@@ -149,6 +149,12 @@ npx pod-install
 yarn add @react-navigation/native @react-navigation/native-stack @react-navigation/bottom-tabs @react-navigation/drawer
 ```
 
+- **Install `react-native-gesture-handler` with `yarn`**
+
+```sh
+yarn add react-native-gesture-handler
+```
+
 - **Install `react-native-screens` with `yarn`**
 
 ```sh
