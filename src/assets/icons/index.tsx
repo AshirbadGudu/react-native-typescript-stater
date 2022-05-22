@@ -1,5 +1,5 @@
 import React from 'react';
-import Svg, {SvgProps, Path, G} from 'react-native-svg';
+import Svg, {SvgProps, Path, G, Line} from 'react-native-svg';
 type IconType = SvgProps & {
   size?: number;
 };
@@ -13,19 +13,36 @@ const ICONS = {
   Menu: (props: IconType) => (
     <Svg
       stroke="currentColor"
-      fill="currentColor"
-      stroke-width="0"
+      fill="none"
+      stroke-width="2"
       viewBox="0 0 24 24"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       {...props}
       color={props.color || defaultProps.color}
       width={props.size || defaultProps.size}
       height={props.size || defaultProps.size}>
-      <G>
-        <Path
-          d="M7 11.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9zm0 10a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9zm10-10a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9zm0 10a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"
-          stroke={props.color || defaultProps.color}
-        />
-      </G>
+      <Line
+        stroke={props.color || defaultProps.color}
+        x1="3"
+        y1="12"
+        x2="21"
+        y2="12"
+      />
+      <Line
+        stroke={props.color || defaultProps.color}
+        x1="3"
+        y1="6"
+        x2="21"
+        y2="6"
+      />
+      <Line
+        stroke={props.color || defaultProps.color}
+        x1="3"
+        y1="18"
+        x2="21"
+        y2="18"
+      />
     </Svg>
   ),
   RightArrow: (props: IconType) => (
