@@ -8,9 +8,22 @@ const Stack = createNativeStackNavigator<PrivateRoutesTypes>();
 
 const PrivateRoutes = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        headerTintColor: '#000',
+        headerBackTitleVisible: false,
+        headerTitleStyle: {fontFamily: 'Nunito-Bold'},
+      }}>
       <Stack.Screen name="BottomTabs" component={BottomTabs} />
-      <Stack.Screen name="EditProfile" component={EditProfile} />
+      <Stack.Screen
+        name="EditProfile"
+        component={EditProfile}
+        options={{
+          headerShown: true,
+          headerTitle: 'Edit Profile',
+        }}
+      />
     </Stack.Navigator>
   );
 };
