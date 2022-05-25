@@ -12,10 +12,10 @@ import {
 } from 'native-base';
 import {ICONS} from 'assets';
 import {useNavigation} from '@react-navigation/native';
-import {CustomDrawerNavigationType} from 'routes';
+import {StackAndTabType} from 'routes';
 
 export default function CustomDrawer() {
-  const navigation = useNavigation<CustomDrawerNavigationType>();
+  const navigation = useNavigation<StackAndTabType>();
   const SIDE_MENUS = useMemo(
     () => [
       {

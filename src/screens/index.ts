@@ -7,5 +7,6 @@ export {default as Splash} from './common/Splash';
 export {default as Home} from './private/Home';
 export {default as Profile} from './private/Profile';
 export {default as EditProfile} from './private/EditProfile';
+export {default as Notifications} from './private/Notifications';
 // Public Screens
 export {default as Onboarding} from './public/Onboarding';

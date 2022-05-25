@@ -1,6 +1,6 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {EditProfile} from 'screens';
+import {EditProfile, Notifications} from 'screens';
 import {PrivateRoutesTypes} from './types';
 import {BottomTabs} from 'layouts';
 
@@ -22,6 +22,14 @@ const PrivateRoutes = () => {
         options={{
           headerShown: true,
           headerTitle: 'Edit Profile',
+        }}
+      />
+      <Stack.Screen
+        name="Notifications"
+        component={Notifications}
+        options={{
+          headerShown: true,
+          headerTitle: 'Notifications',
         }}
       />
     </Stack.Navigator>

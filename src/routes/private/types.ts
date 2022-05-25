@@ -6,9 +6,10 @@ import {BottomTabsTypes} from 'layouts';
 export type PrivateRoutesTypes = {
   BottomTabs: undefined;
   EditProfile: undefined;
+  Notifications: undefined;
 };
 
-export type CustomDrawerNavigationType = CompositeNavigationProp<
+export type StackAndTabType = CompositeNavigationProp<
   BottomTabNavigationProp<BottomTabsTypes>,
   NativeStackNavigationProp<PrivateRoutesTypes>
 >;

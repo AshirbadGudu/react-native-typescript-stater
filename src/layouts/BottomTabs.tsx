@@ -5,6 +5,7 @@ import {ICONS} from 'assets';
 import {Box} from 'native-base';
 import {TouchableOpacity} from 'react-native';
 import {DrawerActions, useNavigation} from '@react-navigation/native';
+import {StackAndTabType} from 'routes';
 
 export type BottomTabsTypes = {
   Home: undefined;
@@ -14,13 +15,23 @@ export type BottomTabsTypes = {
 const Tab = createBottomTabNavigator<BottomTabsTypes>();
 
 export default function BottomTabs() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackAndTabType>();
   return (
     <>
       <Tab.Navigator
         screenOptions={{
           headerTitleStyle: {fontFamily: 'Nunito-Bold'},
           tabBarLabelStyle: {fontFamily: 'Nunito-Regular'},
+          headerRight: () => (
+            <Box pr="3">
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('Notifications');
+                }}>
+                <ICONS.Notification />
+              </TouchableOpacity>
+            </Box>
+          ),
           headerLeft: () => (
             <Box pl="3">
               <TouchableOpacity
