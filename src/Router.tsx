@@ -1,10 +1,10 @@
-import {DrawerLayout} from 'layouts';
+import {PublicRoutes} from 'routes';
 import React from 'react';
 
 export default function Router() {
   return (
     <>
-      <DrawerLayout />
+      <PublicRoutes />
     </>
   );
 }
