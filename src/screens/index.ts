@@ -8,5 +8,6 @@ export {default as Home} from './private/Home';
 export {default as Profile} from './private/Profile';
 export {default as EditProfile} from './private/EditProfile';
 export {default as Notifications} from './private/Notifications';
+export {default as Chats} from './private/chats';
 // Public Screens
 export {default as Onboarding} from './public/Onboarding';
