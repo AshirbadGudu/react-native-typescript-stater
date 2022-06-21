@@ -2,16 +2,16 @@ import {extendTheme} from 'native-base';
 
 export const COLORS = {
   primary: {
-    '50': '#ebf5ff',
-    '100': '#daeeff',
-    '200': '#8fd3ff',
-    '300': '#5ab8ff',
-    '400': '#3499fd',
-    '500': '#1877f2',
-    '600': '#1664df',
-    '700': '#1950b4',
-    '800': '#1a468e',
-    '900': '#00008b',
+    '50': '#FFFFFC',
+    '100': '#C6DDFC',
+    '200': '#8CBBF9',
+    '300': '#65A4F6',
+    '400': '#3F8EF4',
+    '500': '#1877F2',
+    '600': '#0B5DC7',
+    '700': '#084492',
+    '800': '#052B5C',
+    '900': '#021227',
   },
   secondary: {
     '50': '#f6f6f6',
@@ -32,31 +32,40 @@ const CustomTheme = extendTheme({
   fontConfig: {
     Nunito: {
       100: {
-        normal: 'Nunito-Regular',
+        normal: 'Nunito-Thin',
+        italic: 'Nunito-ThinItalic',
       },
       200: {
-        normal: 'Nunito-Regular',
+        normal: 'Nunito-ExtraLight',
+        italic: 'Nunito-ExtraLightItalic',
       },
       300: {
-        normal: 'Nunito-Regular',
+        normal: 'Nunito-Light',
+        italic: 'Nunito-LightItalic',
       },
       400: {
         normal: 'Nunito-Regular',
+        italic: 'Nunito-Italic',
       },
       500: {
-        normal: 'Nunito-Bold',
+        normal: 'Nunito-Medium',
+        italic: 'Nunito-MediumItalic',
       },
       600: {
-        normal: 'Nunito-Bold',
+        normal: 'Nunito-SemiBold',
+        italic: 'Nunito-SemiBoldItalic',
       },
       700: {
         normal: 'Nunito-Bold',
+        italic: 'Nunito-BoldItalic',
       },
       800: {
-        normal: 'Nunito-Bold',
+        normal: 'Nunito-ExtraBold',
+        italic: 'Nunito-ExtraBoldItalic',
       },
       900: {
-        normal: 'Nunito-Bold',
+        normal: 'Nunito-Black',
+        italic: 'Nunito-BlackItalic',
       },
     },
   },

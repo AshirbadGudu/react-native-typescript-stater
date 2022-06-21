@@ -1,10 +1,10 @@
-import {PublicRoutes} from 'routes';
+import {PrivateRoutes} from 'routes';
 import React from 'react';
 
 export default function Router() {
   return (
     <>
-      <PublicRoutes />
+      <PrivateRoutes />
     </>
   );
 }
