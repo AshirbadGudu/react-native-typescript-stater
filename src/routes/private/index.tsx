@@ -1,6 +1,6 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {ChatDetails, EditProfile, Notifications} from 'screens';
+import {Private} from 'screens';
 import {PrivateRoutesTypes} from './types';
 import {BottomTabs} from 'layouts';
 
@@ -16,10 +16,10 @@ const PrivateRoutes = () => {
         headerTitleStyle: {fontFamily: 'Nunito-Bold'},
       }}>
       <Stack.Screen name="BottomTabs" component={BottomTabs} />
-      <Stack.Screen name="ChatDetails" component={ChatDetails} />
+      <Stack.Screen name="ChatDetails" component={Private.ChatDetails} />
       <Stack.Screen
         name="EditProfile"
-        component={EditProfile}
+        component={Private.EditProfile}
         options={{
           headerShown: true,
           headerTitle: 'Edit Profile',
@@ -27,7 +27,7 @@ const PrivateRoutes = () => {
       />
       <Stack.Screen
         name="Notifications"
-        component={Notifications}
+        component={Private.Notifications}
         options={{
           headerShown: true,
           headerTitle: 'Notifications',

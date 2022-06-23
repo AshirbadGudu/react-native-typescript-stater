@@ -1,6 +1,6 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Chats, Home, Profile} from 'screens';
+import {Private} from 'screens';
 import {ICONS} from 'assets';
 import {Box} from 'native-base';
 import {TouchableOpacity} from 'react-native';
@@ -46,7 +46,7 @@ export default function BottomTabs() {
         }}>
         <Tab.Screen
           name="Home"
-          component={Home}
+          component={Private.Home}
           options={{
             tabBarIcon: ({color, size}) => (
               <ICONS.Dashboard color={color} size={size} />
@@ -55,7 +55,7 @@ export default function BottomTabs() {
         />
         <Tab.Screen
           name="Chats"
-          component={Chats}
+          component={Private.Chats}
           options={{
             tabBarIcon: ({color, size}) => (
               <ICONS.Chat color={color} size={size} />
@@ -64,7 +64,7 @@ export default function BottomTabs() {
         />
         <Tab.Screen
           name="Profile"
-          component={Profile}
+          component={Private.Profile}
           options={{
             tabBarIcon: ({color, size}) => (
               <ICONS.User color={color} size={size} />
