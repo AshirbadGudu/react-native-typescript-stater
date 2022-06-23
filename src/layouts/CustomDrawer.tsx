@@ -34,9 +34,7 @@ export default function CustomDrawer() {
         id: '2',
         title: 'Profile',
         icon: <ICONS.User size={28} color={COLORS.primary[600]} />,
-        onPress: () => {
-          navigation.navigate('Profile');
-        },
+        onPress: () => navigation.navigate('Profile'),
       },
       {
         id: '3',
@@ -60,13 +58,13 @@ export default function CustomDrawer() {
         id: '6',
         title: 'Customer Support',
         icon: <ICONS.Help size={28} color={COLORS.primary[600]} />,
-        onPress: () => {},
+        onPress: () => navigation.navigate('CustomerSupport'),
       },
       {
         id: '7',
         title: 'About Us',
         icon: <ICONS.Info size={28} color={COLORS.primary[600]} />,
-        onPress: () => {},
+        onPress: () => navigation.navigate('About'),
       },
       {
         id: '8',
