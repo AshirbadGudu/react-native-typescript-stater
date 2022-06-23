@@ -1,5 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
-import {ICONS} from 'assets';
+import {ANIMATIONS, ICONS} from 'assets';
+import {Empty} from 'components/core';
 import {Avatar, Box, Column, Heading, Pressable, Row} from 'native-base';
 import React, {useCallback, useState} from 'react';
 import {Dimensions} from 'react-native';
@@ -119,7 +120,16 @@ export default function Details() {
             }}
             scrollToBottom
             showUserAvatar
-            // renderChatEmpty={renderChatEmpty}
+            renderChatEmpty={() => (
+              <Box style={{transform: [{scaleY: -1}]}} h="full">
+                <Empty
+                  animation={ANIMATIONS.NO_RESULTS_FOUND}
+                  title={'No Chats Found'}
+                  subtitle={'No Conversation Found'}
+                  noLoop
+                />
+              </Box>
+            )}
             // scrollToBottomComponent={scrollToBottomComponent}
             // isTyping={true}
             onInputTextChanged={txt => changeTypingStatus(txt)}
