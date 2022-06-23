@@ -7,6 +7,7 @@ export type PrivateRoutesTypes = {
   BottomTabs: undefined;
   EditProfile: undefined;
   Notifications: undefined;
+  ChatDetails: undefined;
 };
 
 export type StackAndTabType = CompositeNavigationProp<

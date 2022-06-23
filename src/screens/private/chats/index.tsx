@@ -1,8 +1,20 @@
+import {useNavigation} from '@react-navigation/native';
 import {ICONS} from 'assets';
-import {Avatar, Box, FlatList, Heading, HStack, Row, VStack} from 'native-base';
+import {
+  Avatar,
+  Box,
+  FlatList,
+  Heading,
+  HStack,
+  Pressable,
+  Row,
+  VStack,
+} from 'native-base';
 import React from 'react';
+import {StackAndTabType} from 'routes';
 import {COLORS} from 'styles';
 export default function Chats() {
+  const navigation = useNavigation<StackAndTabType>();
   return (
     <>
       <Box
@@ -72,7 +84,7 @@ export default function Chats() {
             },
           ]}
           renderItem={({item, index}) => (
-            <>
+            <Pressable onPress={() => navigation.navigate('ChatDetails')}>
               <Row alignItems="center" mb="8" justifyContent={'space-between'}>
                 <HStack space="4" alignItems="center">
                   <Avatar source={{uri: item.uri}} size="md">
@@ -90,7 +102,7 @@ export default function Chats() {
                 </HStack>
                 <ICONS.ChevronRight color={COLORS.primary[500]} />
               </Row>
-            </>
+            </Pressable>
           )}
           keyExtractor={(item, index) => index.toString()}
         />

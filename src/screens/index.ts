@@ -9,5 +9,6 @@ export {default as Profile} from './private/Profile';
 export {default as EditProfile} from './private/EditProfile';
 export {default as Notifications} from './private/Notifications';
 export {default as Chats} from './private/chats';
+export {default as ChatDetails} from './private/chats/Details';
 // Public Screens
 export {default as Onboarding} from './public/Onboarding';
