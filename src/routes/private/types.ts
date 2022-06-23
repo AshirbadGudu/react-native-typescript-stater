@@ -8,6 +8,9 @@ export type PrivateRoutesTypes = {
   EditProfile: undefined;
   Notifications: undefined;
   ChatDetails: undefined;
+  CustomerSupport: undefined;
+  About: undefined;
+  FAQ: undefined;
 };
 
 export type StackAndTabType = CompositeNavigationProp<
