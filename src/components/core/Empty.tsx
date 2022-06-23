@@ -10,7 +10,7 @@ type EmptyProps = {
     label: string;
     onPress: () => void;
   };
-  loop?: boolean;
+  noLoop?: boolean;
 };
 
 export default ({
@@ -18,14 +18,14 @@ export default ({
   animation,
   subtitle,
   action,
-  loop = true,
+  noLoop = false,
 }: EmptyProps) => {
   return (
     <>
       <Center>
         <Box h="96" w="full">
           {Boolean(animation) && (
-            <LottieView source={animation} autoPlay loop={loop} />
+            <LottieView source={animation} autoPlay loop={!noLoop} />
           )}
         </Box>
         <Heading>{title}</Heading>

@@ -1,5 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
-import {ICONS} from 'assets';
+import {ANIMATIONS, ICONS} from 'assets';
+import {Empty} from 'components/core';
 import {
   Avatar,
   Box,
@@ -104,6 +105,14 @@ export default function Chats() {
               </Row>
             </Pressable>
           )}
+          ListEmptyComponent={
+            <Empty
+              animation={ANIMATIONS.NO_RESULTS_FOUND}
+              title={'No Chats Found'}
+              subtitle={'No Chats Found'}
+              noLoop
+            />
+          }
           keyExtractor={(item, index) => index.toString()}
         />
       </Box>
