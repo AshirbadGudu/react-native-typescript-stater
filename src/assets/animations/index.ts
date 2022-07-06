@@ -14,6 +14,7 @@ import ANIMATED_GIFT from './animated-giftbox.json';
 import APP_UPDATE from './app-update.json';
 import REFER from './refer.json';
 import CANCEL_TICK from './cancel.json';
+import FAQ from './no-faq.json';
 
 export default {
   ACCOUNT,
@@ -32,4 +33,5 @@ export default {
   APP_UPDATE,
   REFER,
   CANCEL_TICK,
+  FAQ,
 };

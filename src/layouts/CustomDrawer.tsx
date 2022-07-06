@@ -60,6 +60,12 @@ export default function CustomDrawer() {
         onPress: () => navigation.navigate('CustomerSupport'),
       },
       {
+        id: 'faq6',
+        title: 'FAQ',
+        icon: <ICONS.FAQ size={28} color={COLORS.primary[600]} />,
+        onPress: () => navigation.navigate('FAQ'),
+      },
+      {
         id: '7',
         title: 'About Us',
         icon: <ICONS.Info size={28} color={COLORS.primary[600]} />,

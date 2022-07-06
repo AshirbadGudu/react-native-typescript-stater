@@ -106,6 +106,22 @@ const ICONS = {
       stroke="currentColor"
       fill="currentColor"
       stroke-width="0"
+      viewBox="0 0 24 24"
+      {...props}
+      color={props.color || defaultProps.color}
+      width={props.size || defaultProps.size}
+      height={props.size || defaultProps.size}>
+      <Path
+        stroke={props.color || defaultProps.color}
+        d="M12,2C6.486,2,2,6.486,2,12v0.714V16v0.143C2,17.167,2.897,18,4,18h1c0.553,0,1-0.448,1-1v-5.143c0-0.552-0.447-1-1-1 H4.092C4.648,6.987,7.978,4,12,4s7.352,2.987,7.908,6.857H19c-0.553,0-1,0.448-1,1V16v1v1c0,1.103-0.897,2-2,2h-2v-1h-4v3h2h2h2 c2.206,0,4-1.794,4-4c1.103,0,2-0.833,2-1.857V16v-3.286V12C22,6.486,17.514,2,12,2z"
+      />
+    </Svg>
+  ),
+  FAQ: (props: IconType) => (
+    <Svg
+      stroke="currentColor"
+      fill="currentColor"
+      stroke-width="0"
       viewBox="0 0 512 512"
       {...props}
       color={props.color || defaultProps.color}
@@ -535,6 +551,22 @@ const ICONS = {
       <Path
         stroke={props.color || defaultProps.color}
         d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+      />
+    </Svg>
+  ),
+  CaretDown: (props: IconType) => (
+    <Svg
+      stroke="currentColor"
+      fill="currentColor"
+      stroke-width="0"
+      viewBox="0 0 1024 1024"
+      {...props}
+      color={props.color || defaultProps.color}
+      width={props.size || defaultProps.size}
+      height={props.size || defaultProps.size}>
+      <Path
+        stroke={props.color || defaultProps.color}
+        d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"
       />
     </Svg>
   ),

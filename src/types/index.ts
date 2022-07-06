@@ -10,3 +10,11 @@ export type Notification = {
   createdAt: string;
   updatedAt?: string;
 };
+
+export type FAQ = {
+  _id: string;
+  answer: string;
+  createdAt: string;
+  question: string;
+  updatedAt: string;
+};
