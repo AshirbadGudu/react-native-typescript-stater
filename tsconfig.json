@@ -38,6 +38,9 @@
       "components/core": [
         "src/components/core"
       ],
+      "components/pickers": [
+        "src/components/pickers"
+      ],
       "configs": [
         "src/configs"
       ],

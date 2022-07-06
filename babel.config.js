@@ -8,6 +8,7 @@ module.exports = {
           assets: './src/assets',
           components: './src/components',
           'components/core': './src/components/core',
+          'components/pickers': './src/components/pickers',
           configs: './src/configs',
           constant: './src/constant',
           contexts: './src/contexts',
