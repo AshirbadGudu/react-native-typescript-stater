@@ -6,6 +6,7 @@ import {Box} from 'native-base';
 import {TouchableOpacity} from 'react-native';
 import {DrawerActions, useNavigation} from '@react-navigation/native';
 import {StackAndTabType} from 'routes';
+import {FONTS} from 'styles';
 
 export type BottomTabsTypes = {
   Home: undefined;
@@ -21,8 +22,8 @@ export default function BottomTabs() {
     <>
       <Tab.Navigator
         screenOptions={{
-          headerTitleStyle: {fontFamily: 'Nunito-Bold'},
-          tabBarLabelStyle: {fontFamily: 'Nunito-Regular'},
+          headerTitleStyle: {fontFamily: FONTS[700].normal},
+          tabBarLabelStyle: {fontFamily: FONTS[400].normal},
           headerRight: () => (
             <Box pr="3">
               <TouchableOpacity

@@ -27,48 +27,48 @@ export const COLORS = {
   },
 };
 
+export const FONTS = {
+  100: {
+    normal: 'Nunito-Thin',
+    italic: 'Nunito-ThinItalic',
+  },
+  200: {
+    normal: 'Nunito-ExtraLight',
+    italic: 'Nunito-ExtraLightItalic',
+  },
+  300: {
+    normal: 'Nunito-Light',
+    italic: 'Nunito-LightItalic',
+  },
+  400: {
+    normal: 'Nunito-Regular',
+    italic: 'Nunito-Italic',
+  },
+  500: {
+    normal: 'Nunito-Medium',
+    italic: 'Nunito-MediumItalic',
+  },
+  600: {
+    normal: 'Nunito-SemiBold',
+    italic: 'Nunito-SemiBoldItalic',
+  },
+  700: {
+    normal: 'Nunito-Bold',
+    italic: 'Nunito-BoldItalic',
+  },
+  800: {
+    normal: 'Nunito-ExtraBold',
+    italic: 'Nunito-ExtraBoldItalic',
+  },
+  900: {
+    normal: 'Nunito-Black',
+    italic: 'Nunito-BlackItalic',
+  },
+};
+
 const CustomTheme = extendTheme({
   colors: COLORS,
-  fontConfig: {
-    Nunito: {
-      100: {
-        normal: 'Nunito-Thin',
-        italic: 'Nunito-ThinItalic',
-      },
-      200: {
-        normal: 'Nunito-ExtraLight',
-        italic: 'Nunito-ExtraLightItalic',
-      },
-      300: {
-        normal: 'Nunito-Light',
-        italic: 'Nunito-LightItalic',
-      },
-      400: {
-        normal: 'Nunito-Regular',
-        italic: 'Nunito-Italic',
-      },
-      500: {
-        normal: 'Nunito-Medium',
-        italic: 'Nunito-MediumItalic',
-      },
-      600: {
-        normal: 'Nunito-SemiBold',
-        italic: 'Nunito-SemiBoldItalic',
-      },
-      700: {
-        normal: 'Nunito-Bold',
-        italic: 'Nunito-BoldItalic',
-      },
-      800: {
-        normal: 'Nunito-ExtraBold',
-        italic: 'Nunito-ExtraBoldItalic',
-      },
-      900: {
-        normal: 'Nunito-Black',
-        italic: 'Nunito-BlackItalic',
-      },
-    },
-  },
+  fontConfig: {Nunito: FONTS},
   fonts: {
     heading: 'Nunito',
     body: 'Nunito',

@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Private} from 'screens';
 import {PrivateRoutesTypes} from './types';
 import {BottomTabs} from 'layouts';
+import {FONTS} from 'styles';
 
 const Stack = createNativeStackNavigator<PrivateRoutesTypes>();
 
@@ -13,7 +14,7 @@ const PrivateRoutes = () => {
         headerShown: false,
         headerTintColor: '#000',
         headerBackTitleVisible: false,
-        headerTitleStyle: {fontFamily: 'Nunito-Bold'},
+        headerTitleStyle: {fontFamily: FONTS[700].normal},
       }}>
       <Stack.Screen name="BottomTabs" component={BottomTabs} />
       <Stack.Screen name="ChatDetails" component={Private.ChatDetails} />

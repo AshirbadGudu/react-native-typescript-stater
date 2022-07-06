@@ -6,7 +6,7 @@ import React, {useCallback, useState} from 'react';
 import {Dimensions} from 'react-native';
 import {Bubble, Composer, GiftedChat, Send} from 'react-native-gifted-chat';
 import {StackAndTabType} from 'routes';
-import {COLORS} from 'styles';
+import {COLORS, FONTS} from 'styles';
 export const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
 export default function Details() {
@@ -137,11 +137,11 @@ export default function Details() {
             renderComposer={props => (
               <Composer
                 {...props}
-                textInputStyle={{fontFamily: 'Montserrat-Light'}}
+                textInputStyle={{fontFamily: FONTS[300].normal}}
               />
             )}
             renderSend={props => (
-              <Send {...props} textStyle={{fontFamily: 'Montserrat-Medium'}} />
+              <Send {...props} textStyle={{fontFamily: FONTS[500].normal}} />
             )}
             renderBubble={props => (
               <Bubble
