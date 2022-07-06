@@ -7,7 +7,6 @@ import {
   Row,
   Divider,
   Pressable,
-  Text,
   FlatList,
 } from 'native-base';
 import {ICONS} from 'assets';
@@ -93,7 +92,7 @@ export default function CustomDrawer() {
         <FlatList
           _contentContainerStyle={{minH: 'full'}}
           ListHeaderComponent={
-            <>
+            <Pressable onPress={() => navigation.navigate('EditProfile')}>
               <Row
                 bg={{
                   linearGradient: {
@@ -137,15 +136,12 @@ export default function CustomDrawer() {
                   </Heading>
                 </VStack>
               </Row>
-            </>
+            </Pressable>
           }
           data={SIDE_MENUS}
           renderItem={({item}) => (
             <>
-              <Pressable
-                onPress={() => {
-                  item?.onPress();
-                }}>
+              <Pressable onPress={() => item?.onPress()}>
                 <Row alignItems={'center'} px="2" py="4" space="4">
                   {item.icon}
                   <Heading fontWeight={'medium'} fontSize={'lg'}>
