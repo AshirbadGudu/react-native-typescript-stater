@@ -1,15 +1,8 @@
 import {useNavigation} from '@react-navigation/native';
-import {ICONS, ANIMATIONS} from 'assets';
+import {ANIMATIONS} from 'assets';
+import {NotificationItem} from 'components';
 import {Empty} from 'components/core';
-import {
-  Box,
-  Row,
-  Heading,
-  Center,
-  VStack,
-  FlatList,
-  Pressable,
-} from 'native-base';
+import {Box, FlatList} from 'native-base';
 import React from 'react';
 import {StackAndTabType} from 'routes';
 
@@ -18,42 +11,24 @@ export default function Notifications() {
 
   return (
     <>
-      <Box safeAreaTop minH={'full'}>
+      <Box minH={'full'}>
         <FlatList
           _contentContainerStyle={{
-            py: '4',
-            px: '4',
+            py: '2',
+            px: '2',
           }}
-          data={[]}
+          data={[2]}
           renderItem={({item, index}) => (
-            <Pressable>
-              <Row
-                space={'0.5'}
-                my="2"
-                bg="primary.50"
-                shadow={'4'}
-                rounded="md"
-                alignItems={'center'}>
-                <Center p="3">
-                  <ICONS.User size={32} />
-                </Center>
-                <VStack space={'0.5'} py="1">
-                  <Heading fontSize={'md'} fontWeight={'medium'}>
-                    {'IELTS Study Abroad 2022'}
-                  </Heading>
-                  <Heading
-                    w="89%"
-                    fontSize={'xs'}
-                    fontWeight={'light'}
-                    numberOfLines={2}>
-                    {'Study abroad,english,spokem and written common skilss'}
-                  </Heading>
-                  <Heading fontSize={'xs'} fontWeight={'medium'}>
-                    3{index} Students
-                  </Heading>
-                </VStack>
-              </Row>
-            </Pressable>
+            <NotificationItem
+              notification={{
+                title: 'Notification title',
+                body: 'Notification description',
+                createdAt: new Date().toString(),
+                _id: '123',
+                isRead: false,
+              }}
+              refetch={() => {}}
+            />
           )}
           ListEmptyComponent={
             <Empty
