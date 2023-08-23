@@ -2,6 +2,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {NativeBaseProvider} from 'native-base';
 import React from 'react';
 import {PublicRoutes} from '~/routes';
+import PrivateRoutes from '~/routes/private';
 import CustomTheme from '~/styles';
 
 export default function App(): JSX.Element {
@@ -13,7 +14,9 @@ export default function App(): JSX.Element {
           'linear-gradient': require('react-native-linear-gradient').default,
         },
       }}>
-      <NavigationContainer>{<PublicRoutes />}</NavigationContainer>
+      <NavigationContainer>
+        {true ? <PrivateRoutes /> : <PublicRoutes />}
+      </NavigationContainer>
     </NativeBaseProvider>
   );
 }
