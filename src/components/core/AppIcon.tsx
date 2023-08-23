@@ -88,34 +88,98 @@ export default function AppIcon({
   SimpleLineIconsName,
   ZocialName,
   name,
+  size = 24,
+  color = 'black',
   ...props
 }: IconProps) {
-  if (IoniconsName) return <Ionicons {...props} name={IoniconsName} />;
-  if (AntDesignName) return <AntDesign {...props} name={AntDesignName} />;
-  if (EntypoName) return <Entypo {...props} name={EntypoName} />;
-  if (EvilIconsName) return <EvilIcons {...props} name={EvilIconsName} />;
-  if (FeatherName) return <Feather {...props} name={FeatherName} />;
-  if (FontAwesomeName) return <FontAwesome {...props} name={FontAwesomeName} />;
+  if (IoniconsName)
+    return (
+      <Ionicons {...props} size={size} color={color} name={IoniconsName} />
+    );
+  if (AntDesignName)
+    return (
+      <AntDesign {...props} size={size} color={color} name={AntDesignName} />
+    );
+  if (EntypoName)
+    return <Entypo {...props} size={size} color={color} name={EntypoName} />;
+  if (EvilIconsName)
+    return (
+      <EvilIcons {...props} size={size} color={color} name={EvilIconsName} />
+    );
+  if (FeatherName)
+    return <Feather {...props} size={size} color={color} name={FeatherName} />;
+  if (FontAwesomeName)
+    return (
+      <FontAwesome
+        {...props}
+        size={size}
+        color={color}
+        name={FontAwesomeName}
+      />
+    );
   if (FontAwesome5Name)
-    return <FontAwesome5 {...props} name={FontAwesome5Name} />;
+    return (
+      <FontAwesome5
+        {...props}
+        size={size}
+        color={color}
+        name={FontAwesome5Name}
+      />
+    );
   if (FontAwesome5ProName)
-    return <FontAwesome5Pro {...props} name={FontAwesome5ProName} />;
-  if (FontistoName) return <Fontisto {...props} name={FontistoName} />;
-  if (FoundationName) return <Foundation {...props} name={FoundationName} />;
+    return (
+      <FontAwesome5Pro
+        {...props}
+        size={size}
+        color={color}
+        name={FontAwesome5ProName}
+      />
+    );
+  if (FontistoName)
+    return (
+      <Fontisto {...props} size={size} color={color} name={FontistoName} />
+    );
+  if (FoundationName)
+    return (
+      <Foundation {...props} size={size} color={color} name={FoundationName} />
+    );
   if (MaterialCommunityIconsName)
     return (
-      <MaterialCommunityIcons {...props} name={MaterialCommunityIconsName} />
+      <MaterialCommunityIcons
+        {...props}
+        size={size}
+        color={color}
+        name={MaterialCommunityIconsName}
+      />
     );
   if (MaterialIconsName)
-    return <MaterialIcons {...props} name={MaterialIconsName} />;
-  if (OcticonsName) return <Octicons {...props} name={OcticonsName} />;
+    return (
+      <MaterialIcons
+        {...props}
+        size={size}
+        color={color}
+        name={MaterialIconsName}
+      />
+    );
+  if (OcticonsName)
+    return (
+      <Octicons {...props} size={size} color={color} name={OcticonsName} />
+    );
   if (SimpleLineIconsName)
-    return <SimpleLineIcons {...props} name={SimpleLineIconsName} />;
-  if (ZocialName) return <Zocial {...props} name={ZocialName} />;
+    return (
+      <SimpleLineIcons
+        {...props}
+        size={size}
+        color={color}
+        name={SimpleLineIconsName}
+      />
+    );
+  if (ZocialName)
+    return <Zocial {...props} size={size} color={color} name={ZocialName} />;
   if (name)
     return ICONS[name]({
-      size: props.size,
-      color: typeof props?.color === 'string' ? props?.color : '#000',
+      size,
+      color: typeof color === 'string' ? color : '#000',
     });
   return null;
 }
