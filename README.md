@@ -1,79 +1,235 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native Typescript Setup
 
-# Getting Started
+## Setup Navigation
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
-
-## Step 1: Start the Metro Server
-
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
-
-To start Metro, run the following command from the _root_ of your React Native project:
+### Install Navigation Packages
 
 ```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+yarn add @react-navigation/native
+yarn add react-native-screens react-native-safe-area-context
 ```
 
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
+### Install Pod for above dependencies
 
 ```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+cd ios && arch -x86_64 pod install
 ```
 
-### For iOS
+### Set up `react-native-screens` by updating `android/app/src/main/java/<your package name>/MainActivity.java` file
+
+```java
+import android.os.Bundle;
+
+public class MainActivity extends ReactActivity {
+  // ...
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
+  }
+  // ...
+}
+```
+
+### Install stack navigation
 
 ```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+yarn add @react-navigation/native-stack
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+### Wrap the navigation with navigation container
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+```tsx
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
 
-## Step 3: Modifying your App
+export default function App() {
+  return (
+    <NavigationContainer>{/* Rest of your app code */}</NavigationContainer>
+  );
+}
+```
 
-Now that you have successfully run the app, let's modify it.
+### Install Drawer Navigation package & other dependencies
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+```bash
+yarn add @react-navigation/drawer react-native-gesture-handler react-native-reanimated
+cd ios && arch -x86_64 pod install
+```
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+### Setup `react-native-gesture-handler` in `index.js`
 
-## Congratulations! :tada:
+```js
+import {AppRegistry} from 'react-native';
+import App from './App';
+import {name as appName} from './app.json';
+import 'react-native-gesture-handler'; // this line add
+AppRegistry.registerComponent(appName, () => App);
+```
 
-You've successfully run and modified your React Native App. :partying_face:
+### Settings up `react-native-reanimated/plugin`
 
-### Now what?
+```js
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: ['react-native-reanimated/plugin'], // this line add
+};
+```
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+### Reset the server cache
 
-# Troubleshooting
+```bash
+yarn start --reset-cache
+```
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+### Install Bottom Navigation package
 
-# Learn More
+```bash
+yarn add @react-navigation/bottom-tabs
+```
 
-To learn more about React Native, take a look at the following resources:
+### Setup absolute imports
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+#### Install `babel-plugin-module-resolver`
+
+```bash
+yarn add -D babel-plugin-module-resolver
+```
+
+#### Update the `babel.config.js` file
+
+```js
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: [
+    [
+      'module-resolver',
+      {
+        root: ['./src'],
+        alias: {
+          '~/assets': './src/assets',
+          '~/components': './src/components',
+          '~/components/core': './src/components/core',
+          '~/components/containers': './src/components/containers',
+          '~/components/shared': './src/components/shared',
+          '~/configs': './src/configs',
+          '~/constant': './src/constant',
+          '~/hooks': './src/hooks',
+          '~/routes': './src/routes',
+          '~/screens': './src/screens',
+          '~/styles': './src/styles',
+          '~/types': './src/types',
+        },
+      },
+    ],
+  ],
+};
+```
+
+#### Update `tsconfig.json` file
+
+```json
+{
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "~/*": ["*"]
+    }
+  }
+}
+```
+
+### Install lottie animation library
+
+```bash
+yarn add lottie-react-native lottie-ios@3.4.0
+```
+
+### Install Image Picker library
+
+#### Install `react-native-image-crop-picker` library
+
+```bash
+yarn add react-native-image-crop-picker
+```
+
+#### Update permissions in `AndroidManifest.xml` file for android
+
+```xml
+<!-- Camera permission required to access picture from camera -->
+<uses-permission android:name="android.permission.CAMERA" />
+```
+
+#### Update permission in `info.plist` for ios
+
+```plist
+<key>NSPhotoLibraryUsageDescription</key>
+<string>This app uses the gallery to update photo of your profile</string>
+<key>NSCameraUsageDescription</key>
+<string>This app uses the camera to take pictures for updating profile photo</string>
+```
+
+### Add Custom Font Family To Your Application
+
+#### Create a file named `react-native.config.js`
+
+```js
+module.exports = {
+  project: {
+    ios: {},
+    android: {},
+  },
+  assets: ['./src/assets/fonts'], // path to the fonts directory
+};
+```
+
+#### Run the following command to add all the assets to both the platforms
+
+```bash
+npx react-native-asset
+```
+
+### Install vector icons
+
+#### Install `react-native-vector-icons` and its types
+
+```bash
+yarn add react-native-vector-icons
+yarn add -D @types/react-native-vector-icons
+```
+
+#### For android open `android/app/build.gradle` and add following
+
+```gradle
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+```
+
+#### Update following in `info.plist` for ios
+
+```plist
+<key>UIAppFonts</key>
+<array>
+  <string>AntDesign.ttf</string>
+  <string>Entypo.ttf</string>
+  <string>EvilIcons.ttf</string>
+  <string>Feather.ttf</string>
+  <string>FontAwesome.ttf</string>
+  <string>FontAwesome5_Brands.ttf</string>
+  <string>FontAwesome5_Regular.ttf</string>
+  <string>FontAwesome5_Solid.ttf</string>
+  <string>Foundation.ttf</string>
+  <string>Ionicons.ttf</string>
+  <string>MaterialIcons.ttf</string>
+  <string>MaterialCommunityIcons.ttf</string>
+  <string>SimpleLineIcons.ttf</string>
+  <string>Octicons.ttf</string>
+  <string>Zocial.ttf</string>
+  <string>Fontisto.ttf</string>
+</array>
+```
+
+#### Install Pod
+
+```bash
+cd ios && arch -x86_64 pod install --repo-update && cd ..
+```
