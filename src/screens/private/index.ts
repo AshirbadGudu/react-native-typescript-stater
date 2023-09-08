@@ -1,1 +1,10 @@
-export {};
+export {default as Checkout} from './Checkout';
+export {default as Coupons} from './Coupons';
+export {default as FAQs} from './FAQs';
+export {default as Home} from './Home';
+export {default as Notifications} from './Notifications';
+export {default as Offers} from './Offers';
+export {default as Profile} from './Profile';
+export {default as Search} from './Search';
+export {default as Settings} from './Settings';
+export {default as Support} from './Support';
