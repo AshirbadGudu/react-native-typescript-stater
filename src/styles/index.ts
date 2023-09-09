@@ -18,6 +18,51 @@ export const COLORS = {
 
 const CustomTheme = extendTheme({
   colors: COLORS,
+  fontConfig: {
+    Poppins: {
+      100: {
+        normal: 'Poppins-Light',
+        italic: 'Poppins-LightItalic',
+      },
+      200: {
+        normal: 'Poppins-ExtraLight',
+        italic: 'Poppins-ExtraLightItalic',
+      },
+      300: {
+        normal: 'Poppins-Regular',
+        italic: 'Poppins-Italic',
+      },
+      400: {
+        normal: 'Poppins-Medium',
+        italic: 'Poppins-MediumItalic',
+      },
+      500: {
+        normal: 'Poppins-SemiBold',
+        italic: 'Poppins-SemiBoldItalic',
+      },
+      600: {
+        normal: 'Poppins-Bold',
+        italic: 'Poppins-BoldItalic',
+      },
+      700: {
+        normal: 'Poppins-ExtraBold',
+        italic: 'Poppins-ExtraBoldItalic',
+      },
+      800: {
+        normal: 'Poppins-Black',
+        italic: 'Poppins-BlackItalic',
+      },
+      900: {
+        normal: 'Poppins-Black',
+        italic: 'Poppins-BlackItalic',
+      },
+    },
+    fonts: {
+      heading: 'Poppins',
+      body: 'Poppins',
+      mono: 'Poppins',
+    },
+  },
 });
 
 export default CustomTheme;
