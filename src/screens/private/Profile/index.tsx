@@ -1,6 +1,6 @@
 import {Box, Heading, ScrollView} from 'native-base';
 import React from 'react';
-import {List} from '~/components/core';
+import {Content, List} from '~/components/core';
 import {IconProps} from '~/components/core/AppIcon';
 
 const listData: {
@@ -93,9 +93,9 @@ export default function Profile() {
         {listData.map((item, index) => (
           <React.Fragment key={index}>
             {item.isHeading ? (
-              <Heading size="md" mt={3} mb={2}>
+              <Content size="md" mt={3} mb={2} weight="bold">
                 {item.title}
-              </Heading>
+              </Content>
             ) : (
               <List
                 title={item.title}

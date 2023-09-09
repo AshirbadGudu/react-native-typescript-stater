@@ -8,7 +8,7 @@ import {
   Row,
 } from 'native-base';
 import React from 'react';
-import {AppIcon} from '~/components/core';
+import {AppIcon, Content} from '~/components/core';
 
 type PressableProps = React.ComponentProps<typeof Pressable>;
 type AvatarProps = React.ComponentProps<typeof Avatar>;
@@ -62,13 +62,13 @@ export default function List({
           justifyContent="space-between"
           w={avatar || leftIcon ? '5/6' : 'full'}>
           <Box>
-            <Heading size="sm" fontWeight={'medium'} {..._title}>
+            <Content size="sm" {..._title} weight="400">
               {title}
-            </Heading>
+            </Content>
             {subtitle && (
-              <Heading size="xs" color="gray.500" {..._subtitle}>
+              <Content size="xs" color="gray.500" {..._subtitle}>
                 {subtitle}
-              </Heading>
+              </Content>
             )}
           </Box>
           <AppIcon {...rightIcon} />
