@@ -1,6 +1,7 @@
 import {Box, Center, Heading, Image} from 'native-base';
 import React from 'react';
 import AnimatedLottieView, {AnimationObject} from 'lottie-react-native';
+import {Content} from './core';
 
 type Props = {
   item: {
@@ -17,9 +18,9 @@ export default function OnboardingSlide({
 }: Props): JSX.Element {
   return (
     <Box {..._box}>
-      <Heading textAlign={'left'} my="2">
+      <Content textAlign={'left'} my="2" weight="400">
         {title}
-      </Heading>
+      </Content>
       <Center>
         {animation ? (
           <>
@@ -33,9 +34,9 @@ export default function OnboardingSlide({
         ) : (
           <Image src={src} alt={title} h="64" w="full" resizeMode="contain" />
         )}
-        <Heading textAlign={'center'} my="2" size="sm" fontWeight={'medium'}>
+        <Content textAlign={'center'} my="2" size="sm">
           {subtitle}
-        </Heading>
+        </Content>
       </Center>
     </Box>
   );

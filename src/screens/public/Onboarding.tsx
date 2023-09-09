@@ -3,6 +3,7 @@ import React, {useRef, useState} from 'react';
 import {FlatList, ViewToken, useWindowDimensions} from 'react-native';
 import {ANIMATIONS} from '~/assets';
 import {OnboardingSlide} from '~/components';
+import {Content} from '~/components/core';
 
 const OnboardingScreens = [
   {
@@ -53,8 +54,9 @@ export default function Onboarding({navigation}: any): JSX.Element {
         },
       }}>
       <HStack justifyContent={'flex-end'} p="2">
-        <Button
-          variant={'link'}
+        <Pressable
+          p="2"
+          _pressed={{opacity: 0.5}}
           onPress={() =>
             currentPage === OnboardingScreens.length - 1
               ? navigation.replace('Login')
@@ -63,8 +65,10 @@ export default function Onboarding({navigation}: any): JSX.Element {
                   index: OnboardingScreens.length - 1,
                 })
           }>
-          {currentPage == OnboardingScreens.length - 1 ? 'Done' : 'Skip'}
-        </Button>
+          <Content size="xs">
+            {currentPage == OnboardingScreens.length - 1 ? 'Done' : 'Skip'}
+          </Content>
+        </Pressable>
       </HStack>
       <FlatList
         data={OnboardingScreens}
