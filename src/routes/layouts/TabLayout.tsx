@@ -47,6 +47,9 @@ export default function TabLayout() {
                 tabBarIcon: ({color, focused, size}) => {
                   return <AppIcon {..._.icon} color={color} size={size} />;
                 },
+                tabBarLabelStyle: {
+                  fontFamily: 'Poppins-Regular',
+                },
               }}
             />
           );
