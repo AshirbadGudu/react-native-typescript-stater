@@ -1,4 +1,5 @@
 import {extendTheme} from 'native-base';
+import {fontFamily} from '../../app.json';
 
 export const COLORS = {
   primary: {
@@ -19,48 +20,48 @@ export const COLORS = {
 const CustomTheme = extendTheme({
   colors: COLORS,
   fontConfig: {
-    Poppins: {
+    [fontFamily]: {
       100: {
-        normal: 'Poppins-Light',
-        italic: 'Poppins-LightItalic',
+        normal: `${fontFamily}-Light`,
+        italic: `${fontFamily}-LightItalic`,
       },
       200: {
-        normal: 'Poppins-ExtraLight',
-        italic: 'Poppins-ExtraLightItalic',
+        normal: `${fontFamily}-ExtraLight`,
+        italic: `${fontFamily}-ExtraLightItalic`,
       },
       300: {
-        normal: 'Poppins-Regular',
-        italic: 'Poppins-Italic',
+        normal: `${fontFamily}-Regular`,
+        italic: `${fontFamily}-Italic`,
       },
       400: {
-        normal: 'Poppins-Medium',
-        italic: 'Poppins-MediumItalic',
+        normal: `${fontFamily}-Medium`,
+        italic: `${fontFamily}-MediumItalic`,
       },
       500: {
-        normal: 'Poppins-SemiBold',
-        italic: 'Poppins-SemiBoldItalic',
+        normal: `${fontFamily}-SemiBold`,
+        italic: `${fontFamily}-SemiBoldItalic`,
       },
       600: {
-        normal: 'Poppins-Bold',
-        italic: 'Poppins-BoldItalic',
+        normal: `${fontFamily}-Bold`,
+        italic: `${fontFamily}-BoldItalic`,
       },
       700: {
-        normal: 'Poppins-ExtraBold',
-        italic: 'Poppins-ExtraBoldItalic',
+        normal: `${fontFamily}-ExtraBold`,
+        italic: `${fontFamily}-ExtraBoldItalic`,
       },
       800: {
-        normal: 'Poppins-Black',
-        italic: 'Poppins-BlackItalic',
+        normal: `${fontFamily}-Black`,
+        italic: `${fontFamily}-BlackItalic`,
       },
       900: {
-        normal: 'Poppins-Black',
-        italic: 'Poppins-BlackItalic',
+        normal: `${fontFamily}-Black`,
+        italic: `${fontFamily}-BlackItalic`,
       },
     },
     fonts: {
-      heading: 'Poppins',
-      body: 'Poppins',
-      mono: 'Poppins',
+      heading: `${fontFamily}`,
+      body: `${fontFamily}`,
+      mono: `${fontFamily}`,
     },
   },
 });

@@ -1,6 +1,7 @@
 import {Heading} from 'native-base';
 import React from 'react';
 import {TextStyle} from 'react-native';
+import {fontFamily} from '../../../app.json';
 
 type HeadingProps = React.ComponentProps<typeof Heading> & {
   bold?: boolean;
@@ -13,9 +14,9 @@ export default function Content({
   ...props
 }: HeadingProps) {
   const getFontFamily = () => {
-    if (weight === 'bold') return 'Poppins-Bold';
-    if (weight === '400') return 'Poppins-Medium';
-    return 'Poppins-Regular';
+    if (weight === 'bold') return `${fontFamily}-Bold`;
+    if (weight === '400') return `${fontFamily}-Medium`;
+    return `${fontFamily}-Regular`;
   };
   return (
     <>

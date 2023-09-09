@@ -1,10 +1,10 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NativeBaseProvider, useColorMode} from 'native-base';
 import React from 'react';
-import {ICONS} from '~/assets';
-import {AppIcon, Btn} from '~/components/core';
+import {AppIcon} from '~/components/core';
 import {IconProps} from '~/components/core/AppIcon';
 import {Private} from '~/screens';
+import {fontFamily} from '../../../app.json';
 
 const Tab = createBottomTabNavigator();
 type BottomTabsTypes = {
@@ -47,9 +47,7 @@ export default function TabLayout() {
                 tabBarIcon: ({color, focused, size}) => {
                   return <AppIcon {..._.icon} color={color} size={size} />;
                 },
-                tabBarLabelStyle: {
-                  fontFamily: 'Poppins-Regular',
-                },
+                tabBarLabelStyle: {fontFamily: `${fontFamily}-Regular`},
               }}
             />
           );
