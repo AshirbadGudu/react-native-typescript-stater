@@ -1,9 +1,10 @@
-import {Pressable, Row, Spinner, Text} from 'native-base';
+import {Pressable, Row, Spinner} from 'native-base';
 import React from 'react';
 import AppIcon, {IconProps} from './AppIcon';
+import Content from './Content';
 
 type RowProps = React.ComponentProps<typeof Row>;
-type TextProps = React.ComponentProps<typeof Text>;
+type TextProps = React.ComponentProps<typeof Content>;
 
 type ButtonProps = {
   children: JSX.Element | string;
@@ -56,9 +57,9 @@ const Button: React.FC<ButtonProps> = ({
         {..._row}>
         {iconSide === 'LEFT' && renderIcon()}
         {typeof children === 'string' ? (
-          <Text color="white" fontWeight="600" {..._text}>
+          <Content size="xs" color="white" {..._text}>
             {children}
-          </Text>
+          </Content>
         ) : (
           children
         )}

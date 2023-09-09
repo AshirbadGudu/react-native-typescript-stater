@@ -3,6 +3,8 @@ import React from 'react';
 import {Control, Controller} from 'react-hook-form';
 import {ICONS} from '~/assets';
 import AppIcon, {IconProps} from './AppIcon';
+import {fontFamily} from '../../../app.json';
+
 type Props = {
   input: {
     key: string;
@@ -29,7 +31,12 @@ export default function AppInput({
       rules={input.rules}
       render={({field: {onBlur, onChange, value}}) => (
         <FormControl isInvalid={Boolean(errorMessage)} my={'1'}>
-          <FormControl.Label>{input.label}</FormControl.Label>
+          <FormControl.Label
+            _text={{
+              style: {fontFamily: `${fontFamily}-Regular`},
+            }}>
+            {input.label}
+          </FormControl.Label>
           <Input
             placeholder={input.placeholder}
             w="full"
