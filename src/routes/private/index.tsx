@@ -3,8 +3,9 @@ import React from 'react';
 import {PrivateRoutesTypes} from '~/routes/private/types';
 import {Private} from '~/screens';
 import {TabLayout} from '../layouts';
+import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
 
-const Stack = createNativeStackNavigator<PrivateRoutesTypes>();
+const Stack = createSharedElementStackNavigator<PrivateRoutesTypes>();
 
 export default function PrivateRoutes({}) {
   return (
