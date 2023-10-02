@@ -15,7 +15,7 @@ export default function App(): JSX.Element {
         },
       }}>
       <NavigationContainer>
-        {!true ? <PrivateRoutes /> : <PublicRoutes />}
+        {true ? <PrivateRoutes /> : <PublicRoutes />}
       </NavigationContainer>
     </NativeBaseProvider>
   );

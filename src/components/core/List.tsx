@@ -8,6 +8,8 @@ import {
   Row,
 } from 'native-base';
 import React from 'react';
+import {Image} from 'react-native';
+import {SharedElement} from 'react-navigation-shared-element';
 import {AppIcon, Content} from '~/components/core';
 
 type PressableProps = React.ComponentProps<typeof Pressable>;
@@ -25,6 +27,7 @@ type Props = {
   rightIcon?: IconProps;
   leftIcon?: IconProps;
   noDivider?: boolean;
+  hasSharedElement?: boolean;
 } & PressableProps;
 
 export default function List({
@@ -50,9 +53,11 @@ export default function List({
         {..._pressableProps}>
         <Center w={avatar || leftIcon ? '1/6' : '0'}>
           {avatar ? (
-            <Avatar source={{uri: avatar}} {..._avatar}>
-              {title[0]}
-            </Avatar>
+            <SharedElement id="id-1">
+              <Avatar source={{uri: avatar}} {..._avatar}>
+                {title[0]}
+              </Avatar>
+            </SharedElement>
           ) : (
             <AppIcon {...leftIcon} />
           )}

@@ -19,7 +19,13 @@ export default function PrivateRoutes({}) {
       <Stack.Screen name="Offers" component={Private.Offers} />
       <Stack.Screen name="Profile" component={Private.Profile} />
       <Stack.Screen name="Search" component={Private.Search} />
-      <Stack.Screen name="Settings" component={Private.Settings} />
+      <Stack.Screen
+        name="Settings"
+        component={Private.Settings}
+        sharedElements={(route, otherRoute, showing) => {
+          return ['id-1'];
+        }}
+      />
       <Stack.Screen name="Support" component={Private.Support} />
     </Stack.Navigator>
   );
